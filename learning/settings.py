@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-66l4(0z0r=pl@p9mqi(ba^4&2=fda!_oakl44yzk2jlrl%wc!n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cthulhulover.pythonanywhere.com']
 
 
 # Application definition
@@ -117,8 +117,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
+STATIC_ROOT = '/home/cthulhulover/learningdjango/learning/static'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
