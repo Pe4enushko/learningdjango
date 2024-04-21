@@ -1,0 +1,13 @@
+{% extends 'grades/base.html' %}
+{% block 'content' %}
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit" name="commit" value="{{id}}">Применить</button>
+        <button type="submit" name="cancel">Отменить</button>
+
+    </form>
+</body>
+{% endblock %}

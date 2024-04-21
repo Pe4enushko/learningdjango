@@ -1,0 +1,27 @@
+{% extends 'attendance/base.html' %}
+{% block 'content' %}
+    <a href="{%url 'attendance-create'%}">Добавить</a>
+        <hr>
+    <form method="post">        
+        <table border>
+            <thead>
+            {% for field in form %}
+                <th>{{field.label}}</th>
+            {% endfor %}
+            <th colspan="2">Функции</th>
+            </thead>
+
+            <tbody>
+                {% for att in attendance %}
+                <tr>
+                    <td>{{att.student}}</td>
+                    <td>{{att.date}}</td>
+                    <td>{{att.subject}}</td>
+                    <td><a href="{% url 'attendance-update' att.id %}">Редактировать</a></td>
+                    <td><a href="{% url 'attendance-delete' att.id %}">Удалить</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'attendance/base.html' %}
+{% block 'content' %}
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            {% load l10n %}
+            {% localize on %}
+            {{ form.as_table }}
+            {% endlocalize %}
+        </table>
+        <button type="submit" name="commit" value="{{id}}">Применить</button>
+        <button type="submit" name="cancel">Отменить</button>
+
+    </form>
+</body>
+{% endblock %}

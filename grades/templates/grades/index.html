@@ -1,0 +1,28 @@
+{% extends 'grades/base.html' %}
+{% block 'content' %}
+    <a href="{%url 'grades-create' %}">Добавить</a>
+        <hr>
+    <form method="post">        
+        <table border>
+            <thead>
+            {% for field in form %}
+                <th>{{field.label}}</th>
+            {% endfor %}
+            <th colspan="2">Функции</th>
+            </thead>
+
+            <tbody>
+                {% for grade in grades %}
+                <tr>
+                    <td>{{grade.value}}</td>
+                    <td>{{grade.date}}</td>
+                    <td>{{grade.student}}</td>
+                    <td>{{grade.subject}}</td>
+                    <td><a href="{% url 'grades-update' grade.id %}">Редактировать</a></td>
+                    <td><a href="{% url 'grades-delete' grade.id %}">Удалить</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </form>
+{% endblock %}
